@@ -1,3 +1,8 @@
+cree una función llamada ObtenerHistorialClinicoPorPaciente que, dado el ID de un paciente, devuelva sus historiales clínicos.
+ Esta función toma como parámetro el ID de un paciente y devuelve una tabla con los detalles de sus historiales clínicos.
+Joins: Utiliza dos uniones (JOIN) para combinar las tablas HISTORIAL_CLINICO, PACIENTE, y EPS para obtener información detallada.
+Uso: Permite realizar consultas rápidas de todos los historiales de un paciente específico.
+
 DELIMITER //
 
 CREATE FUNCTION ObtenerHistorialClinicoPorPaciente(IdPaciente INT)
