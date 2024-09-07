@@ -1,0 +1,15 @@
+DELIMITER //
+
+CREATE FUNCTION ObtenerHistorialClinicoPorPaciente(IdPaciente INT)
+RETURNS TABLE
+BEGIN
+    RETURN (
+        SELECT HC.Id_Hclinico, HC.Observaciones, P.Nombre_Paciente, P.Apellido_Paciente, E.Nombre_Eps
+        FROM HISTORIAL_CLINICO HC
+        JOIN PACIENTE P ON HC.Id_Paciente_Fk = P.Id_Paciente
+        JOIN EPS E ON HC.Id_Eps_Fk = E.Id_Eps
+        WHERE P.Id_Paciente = IdPaciente
+    );
+END //
+
+DELIMITER ;
